@@ -1,0 +1,39 @@
+.popup-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.2);
+}
+
+.popup-container {
+  position: absolute;
+  width: 80vw;
+  height: 70vh;
+  background-color: rgba(0,0,0, 0.6);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content {
+  position: relative;
+  padding: 1em;
+}
+
+.close-popup {
+  position: absolute;
+  right: 1em;
+  cursor: pointer;
+  transform: rotate(0);
+  transition: all 0.3s;
+}
+
+.close-popup:hover {
+  transform: rotate(90deg);
+}

@@ -1,0 +1,27 @@
+.logo.vite:hover {
+  filter: drop-shadow(0 0 2em #747bff);
+}
+
+.logo.solid:hover {
+  filter: drop-shadow(0 0 2em #2f5d90);
+}
+
+main {
+  position: relative;
+}
+
+.close-tab {
+  margin-left: 16px;
+}
+
+.fade-enter-active {
+  transition: opacity 200ms ease-in-out;
+}
+.fade-exit-active {
+  transition: opacity 200ms ease-in-out;
+}
+.fade-enter,
+.fade-exit-to {
+  position: absolute;
+  opacity: 0;
+}
