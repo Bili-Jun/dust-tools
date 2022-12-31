@@ -16,4 +16,4 @@ This template should help get you started developing with Tauri, Solid and Types
 $ cd dush-tools
 $ pnpm install
 $ pnpm tauri dev
-```# dush-tools
+```
