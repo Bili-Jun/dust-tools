@@ -1,4 +1,4 @@
-# dush-tools
+# dust-tools
 
 轻松搬砖工具
 
