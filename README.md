@@ -1,4 +1,8 @@
-# Tauri + Solid + Typescript
+# dush-tools
+
+轻松搬砖工具
+
+## Tauri + Solid + Typescript
 
 This template should help get you started developing with Tauri, Solid and Typescript in Vite.
 
