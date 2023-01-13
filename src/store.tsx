@@ -1,6 +1,6 @@
 import { createContext, useContext } from "solid-js";
 import { createStore } from "solid-js/store"
-import { getAppsStore, getTabsConfig } from "@/utils/common";
+import { getAppInfo, getAppsStore, getTabsConfig } from "@/utils/common";
 import { useNavigate } from "@solidjs/router";
 import { ITabConfig } from "@/config/types";
 import { openPopup as openPopupBase } from "@/components/Popup";
@@ -39,6 +39,16 @@ export function MainProvider(props: IMainProvideProps) {
       setState,
       onTabChange,
       closeTab,
+      onAppChange (app: string, options?: { targetPath?: string, title?: string }) {
+        const href = options?.targetPath || app
+        const appInfo = getAppInfo(app)
+        setState('activeAppKey', href)
+        navigate(href, { replace: true })
+        setState('appTabsConfig', [...state.appTabsConfig, {
+          path: href,
+          title: options?.title || appInfo?.title
+        }])
+      },
       openPopup(config?: IPopupConfig) {
         const instance = openPopupBase(config)
         setState('globalPopupInstance', instance as any)
@@ -46,6 +56,9 @@ export function MainProvider(props: IMainProvideProps) {
       closePopup() {
         (state.globalPopupInstance as any)?.remove?.();
         setState('globalPopupInstance', null)
+      },
+      setTabTitle (tabPath: string, title: string) {
+        setState('appTabsConfig', state.appTabsConfig?.map?.((item: ITabConfig) => ({ ...item, title: title || item.path })))
       }
     }
   ];

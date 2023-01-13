@@ -6,4 +6,5 @@ export interface IButtonProps {
   children?: any
   class?: string
   onClick?: ClickEvent
+  ghost?: boolean
 }

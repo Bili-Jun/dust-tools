@@ -1,5 +1,5 @@
 {
-  "name": "dush-tools",
+  "name": "dust-tools",
   "version": "0.0.0",
   "description": "",
   "scripts": {
@@ -21,6 +21,8 @@
     "@solidjs/meta": "^0.28.2",
     "@solidjs/router": "^0.6.0",
     "@tauri-apps/api": "^1.2.0",
+    "monaco-editor": "^0.34.1",
+    "nanoid": "^4.0.0",
     "solid-icons": "^1.0.4",
     "solid-js": "^1.4.7",
     "solid-start": "^0.2.8",

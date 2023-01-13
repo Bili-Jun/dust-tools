@@ -7,13 +7,13 @@ export interface ITabConfig {
 
 export interface IAppStore {
   state: unknown
-  actions?: (store?: unknown) => boolean | void
-
+  actions?: (store?: unknown) => (ITabConfig & IRouteConfigItem) | void
 }
 
 export interface IAppConfig extends ITabConfig, IRouteConfigItem {
   icon?: string,
   store?: IAppStore
+  config?: any
 }
 
 export type AppsConfig = IAppConfig[]

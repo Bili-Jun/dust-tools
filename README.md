@@ -1,4 +1,4 @@
-# dush-tools
+# dust-tools
 
 轻松搬砖工具
 
@@ -13,7 +13,7 @@ This template should help get you started developing with Tauri, Solid and Types
 ## Usage
 
 ```shell
-$ cd dush-tools
+$ cd dust-tools
 $ pnpm install
 $ pnpm tauri dev
-```# dush-tools
+```# dust-tools

@@ -21,15 +21,16 @@ export default function AppsDashboardMain (props: IAppsDashboardMainProps) {
                 class="app-item-btn"
                 onClick={() => {
                     if (!props.currentAppTabsConfig?.find((o) => o.path === item.path)) {
-                      const isUpdateApp = item.store?.actions?.(store)
-                      if (isUpdateApp) {
-                        props?.onAppChange?.([...props.currentAppTabsConfig, item]) 
+                      const updateApp = item.store?.actions?.(store)
+                      if (updateApp) {
+                        updateApp.path = updateApp.path || item.path
+                        props?.onAppChange?.([...props.currentAppTabsConfig, updateApp]) 
                       }
                     }
                   }
                 }
               >
-                <Icon class="app-icon" size={32} />
+                {Icon && <Icon class="app-icon" size={32} />}
                 {item.title}
               </div>
             </div>

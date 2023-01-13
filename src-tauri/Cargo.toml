@@ -1,5 +1,5 @@
 [package]
-name = "dush-tools"
+name = "dust-tools"
 version = "0.0.0"
 description = "A Tauri App"
 authors = ["you"]

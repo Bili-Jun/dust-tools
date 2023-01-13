@@ -7,7 +7,7 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "dush-tools",
+    "productName": "dust-tools",
     "version": "0.0.0"
   },
   "tauri": {
@@ -62,7 +62,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": false,
-        "title": "dush-tools",
+        "title": "dust-tools",
         "width": 800
       }
     ]

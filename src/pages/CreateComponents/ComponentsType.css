@@ -1,0 +1,13 @@
+.item-icon {
+  margin-right: 8px;
+}
+
+.component-type-item {
+  margin: 8px;
+}
+
+.component-type-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
