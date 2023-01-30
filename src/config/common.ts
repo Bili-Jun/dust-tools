@@ -21,24 +21,30 @@ export const APPS_CONFIG: AppsConfig = [{
     items: [{
       name: 'reactFunctionComponent',
       title: 'react函数组件',
-      icon: 'FaBrandsReact'
+      icon: 'FaBrandsReact',
+      fields: []
     }, {
       name: 'reactClassComponent',
       title: 'react类组件',
-      icon: 'FaBrandsReact'
+      icon: 'FaBrandsReact',
+      fields: []
     }, {
       name: 'vueOptionsComponent',
       title: 'vue组件',
-      icon: 'IoLogoVue'
+      icon: 'IoLogoVue',
+      fields: []
     }, {
       name: 'vueClassComponent',
       title: 'vue类组件',
-      icon: 'IoLogoVue'
+      icon: 'IoLogoVue',
+      fields: []
     }, {
       name: 'solidjsComponent',
       title: 'solidjs组件',
-      icon: 'VsGist'
-    }]
+      icon: 'VsGist',
+      fields: []
+    }],
+    common: [{}]
   }
 }]
   

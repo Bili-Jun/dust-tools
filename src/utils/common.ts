@@ -6,8 +6,37 @@ import { RouteConfig } from "@/components/Routes/types"
 import { APPS_CONFIG } from "@/config/common"
 import { IAppConfig, TabsConfig } from "@/config/types"
 import { IconTypes } from "solid-icons";
+import { ClassNames, IBaseClassNamesObject } from "@/types";
 
-export function getClassNames (...classNames: string[]): string | void {
+export function isString (val: unknown): boolean {
+  if (val === undefined || val === null) {
+    return false
+  }
+  return Object.prototype.toString.call(val) === '[object String]'
+}
+
+export function isArray (val: unknown): boolean {
+  if (val === undefined || val === null) {
+    return false
+  }
+  return Object.prototype.toString.call(val) === '[object Array]'
+}
+
+function getBaseClassNames (classNames: ClassNames): string | void {
+  if (isString(classNames) && classNames.length) {
+    return classNames as unknown as string
+  }
+  
+  if (isArray(classNames)) {
+    return (classNames as Array<string | IBaseClassNamesObject>)?.filter?.(Boolean)?.map?.((item) => getBaseClassNames(item as unknown as ClassNames))?.join?.(' ')
+  }
+
+  const keys = Object.keys(classNames)
+  
+  return keys.length ? keys?.join(' ') : undefined
+}
+
+export function getClassNames (...classNames: ClassNames[]): string | void {
   if (!classNames || !classNames.length) {
     return
   }
@@ -15,9 +44,9 @@ export function getClassNames (...classNames: string[]): string | void {
   const targetClassNames = classNames.filter(Boolean)
 
   if (targetClassNames.length === 1) {
-    return targetClassNames[0]
+    return getBaseClassNames(classNames[0])
   }
-  return targetClassNames.join(' ')
+  return targetClassNames?.map?.((item) => getBaseClassNames(item))?.join?.(' ')
 }
 
 export function getRoutes (): RouteConfig {
